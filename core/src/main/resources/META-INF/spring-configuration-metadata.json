@@ -10,6 +10,11 @@
       "name": "spring.cloud.stream.memory.binder.worker-pool-size",
       "type": "java.lang.Integer",
       "defaultValue": -1
+    },
+    {
+      "name": "spring.cloud.stream.memory.binder.queue-size",
+      "type": "java.lang.Integer",
+      "defaultValue": 2048
     }
   ]
 }
