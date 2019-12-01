@@ -1,0 +1,4 @@
+dependencies {
+    compile "org.springframework.cloud:spring-cloud-stream:$spring_cloud_version"
+    compile "org.slf4j:slf4j-api:$slf4j_version"
+}

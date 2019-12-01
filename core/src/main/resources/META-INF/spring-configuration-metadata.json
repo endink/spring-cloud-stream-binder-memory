@@ -1,0 +1,15 @@
+{
+  "group": [
+    {
+      "name": "spring.cloud.stream.memory.binder",
+      "type": "com.labijie.stream.memory.configuration.MemoryBinderConfigurationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.cloud.stream.memory.binder.worker-pool-size",
+      "type": "java.lang.Integer",
+      "defaultValue": -1
+    }
+  ]
+}
