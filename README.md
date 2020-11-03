@@ -25,7 +25,7 @@ Producer 和 Consumer 在同一进程内
 
 ```groovy
 dependencies {
-    compile "com.labijie:spring-cloud-stream-binder-memory:1.0.0"
+    implementation "com.labijie:spring-cloud-stream-binder-memory:1.1.0"
 }
 ```
 
@@ -71,5 +71,16 @@ spring:
 |spring.cloud.stream.memory.binder.queue-size| 2048 | 阻塞队列大小，当队列满了以后将丢弃最早的消息 | 
 
 > 所有的配置都能够在 IDEA 中智能提示
+
+### 开发环境兼容性：
+ 
+ |组件|版本|说明|
+ |--------|--------|--------|
+ |   kotlin    |      1.4.10    |           |
+ |   jdk    |      1.8   |           |
+ |   spring boot    |      2.3.4.RELEASE    |           |
+ |  spring cloud    |      Hoxton.SR8    |   通过 BOM 控制版本，因为 cloud 组件版本混乱，无法统一指定  |
+ |   spring framework    |      5.2.9.RELEASE   |           |
+ |   spring dpendency management    |      1.0.10.RELEASE    |         
 
 ### 祝你使用愉快 ！
