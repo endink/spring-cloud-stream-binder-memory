@@ -139,7 +139,7 @@ subprojects {
         publishing {
             publications {
                 mavenJava(MavenPublication) {
-                    artifactId = project.name
+                    artifactId = "spring-cloud-stream-binder-memory" + (project.name == "core" ? "" : "-" + project.name)
                     from components.java
 
                     pom {
