@@ -5,7 +5,6 @@ buildscript {
         spring_boot_version = '2.3.4.RELEASE'
         spring_cloud_version='Hoxton.SR8'
         spring_version = '5.2.9.RELEASE'
-        spring_dep_mgn_version='1.0.10.RELEASE'
 
         slf4j_version='1.7.30'
 
@@ -32,9 +31,9 @@ plugins {
     id "org.jetbrains.kotlin.plugin.spring" version "$kotlin_version" apply false
     id "org.springframework.boot" version "$spring_boot_version" apply false
     id "org.jetbrains.kotlin.jvm" version "$kotlin_version" apply false
-    id "io.spring.dependency-management" version "$spring_dep_mgn_version" apply false
     id "io.codearte.nexus-staging" version "$nexus_staging_version"
 }
+
 
 static Boolean  isNotNullOrBlank(Object s){
     return !(s == null || s.toString().trim().length() == 0)
@@ -60,7 +59,6 @@ allprojects {
     apply plugin: 'signing'
     apply plugin: 'kotlin-spring'
     apply plugin: 'java-library'
-    apply plugin: 'io.spring.dependency-management'
 
     if(!project.name.startsWith("dummy")) {
         apply plugin: 'maven-publish'
@@ -109,7 +107,7 @@ allprojects {
         exclude group: "org.junit.vintage", module: "junit-vintage-engine"
     }
     dependencies {
-        implementation enforcedPlatform("org.jetbrains.kotlin:kotlin-bom")
+        implementation platform("org.jetbrains.kotlin:kotlin-bom:${kotlin_version}")
         testImplementation platform("org.junit:junit-bom:$junit_verions")
         implementation platform("org.springframework.boot:spring-boot-dependencies:${spring_boot_version}")
         implementation platform("org.springframework.cloud:spring-cloud-dependencies:${spring_cloud_version}")
@@ -143,6 +141,7 @@ subprojects {
                 mavenJava(MavenPublication) {
                     artifactId = project.name
                     from components.java
+
                     pom {
                         name = "spring-cloud-stream-binder-memory" + (project.name == "core" ? "" : "-" + project.name)
                         description = 'Memory queue implement for spring cloud stream application'
