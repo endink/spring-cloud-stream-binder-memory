@@ -1,6 +1,6 @@
 # Spring Cloud Stream Binder Memory
 
-**本项目已经停止维护，我们创建了新的项目完成同样的功能 https://github.com/hongque-pro/infra-spring-cloud-stream **
+**本项目已经停止维护，我们创建了新的项目完成同样的功能 https://github.com/hongque-pro/infra-spring-cloud-stream**
 
 使用内存队列作为中间件 的 spring cloud stream 标准实现.
 
